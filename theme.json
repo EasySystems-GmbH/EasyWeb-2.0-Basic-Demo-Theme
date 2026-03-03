@@ -1,0 +1,7 @@
+{
+  "name": "BasicDemoTheme",
+  "version": "1.0.0",
+  "author": "EasySystems GmbH",
+  "description": "Basic public demo theme for EasyWeb 2.0.",
+  "entry": "index.html"
+}

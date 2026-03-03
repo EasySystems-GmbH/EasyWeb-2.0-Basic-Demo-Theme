@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ current_page.seo.description }}">
+  <title>{{ current_page.seo.title }}</title>
+  <link rel="stylesheet" href="{{ current_theme.path }}/assets/css/main.css">
+  <link rel="stylesheet" href="{{ current_theme.path }}/assets/css/pageEditor.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">EasyWeb 2.0</a>
+      <nav>
+        <ul class="nav-list">
+          {% for link in navigations.main.links %}
+          <li><a href="{{ link.Url }}">{{ link.Title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container page-content">

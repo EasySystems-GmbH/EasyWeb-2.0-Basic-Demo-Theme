@@ -1,0 +1,4 @@
+.wf-editable {
+  outline: 1px dashed rgba(37, 99, 235, 0.35);
+  outline-offset: 4px;
+}
