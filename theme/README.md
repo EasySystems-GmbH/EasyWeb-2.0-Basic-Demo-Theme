@@ -23,10 +23,9 @@ Use this theme as:
 
 ## Install
 
-1. Copy this repository into your EasyWeb `Themes` folder.
-2. Set EasyWeb theme root to this folder, for example:
-   - `Themes__DefaultRootPath=/app/Themes/BasicDemoTheme`
-3. Restart EasyWeb.
+1. Use as a site workspace (`theme/`, `pages/`) and run `easyweb publish .`, or let the container entrypoint seed on first deploy.
+2. Hosted stacks use `Themes__DefaultRootPath=/app/Themes/site` (see [Hub install guide](https://github.com/EasySystems-GmbH/EasyWeb-2.0-Hub/blob/main/docs/install-with-docker.md)).
+3. After CMS edits on a live server, run `easyweb pull .` to sync changes back to git.
 
 ## Notes
 
