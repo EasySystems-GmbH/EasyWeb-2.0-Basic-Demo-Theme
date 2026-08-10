@@ -1,33 +1,60 @@
 # EasyWeb 2.0 Basic Demo Theme
 
-Public starter theme for EasyWeb 2.0.
+**Single source of truth** for the EasyWeb starter theme (CMS-ready Bootstrap 5).
 
-Use this theme as:
+This repo is the only place to edit the starter. EasyWeb Core copies it into `Themes/site` on Docker first boot or via **Load starter theme** in the Theme admin tab. After that copy, the instance theme is `site` — not this starter.
 
-- a working baseline for new sites
-- a reference for EasyWeb placeholders and navigation loops
-- a safe starting point for custom designs
+## What this is
 
-## Included Files
+- CMS markers (`ew-site-meta`, `ew-nav-brand`, `ew-asset:*`, design tokens)
+- Bootstrap navbar + `wf-editable` shells
+- CLI / WebDAV / code-first compatible (`theme/` files)
+- Empty structural templates: `gallery.html`, `news.html`, `kontakt.html`, legal shells
+- **No** seeded news/dataset/gallery/document entries
+- **No** custom form POST handlers — use CMS forms (`kontakt` placeholder)
 
-- `theme.json` - theme metadata
-- `inc/_header.html` - shared head, header, and navigation
-- `inc/_footer.html` - shared footer and script include
-- `index.html` - homepage
-- `blank.html` - minimal page template
-- `contact.html` - sample contact form using `/api/web/contact`
-- `assets/css/main.css` - base styling
-- `assets/css/pageEditor.css` - editor helper styles
-- `assets/js/main.js` - basic behavior
-- `assets/manifest.json` - optional web manifest
+## Layout
 
-## Install
+```text
+theme/
+  theme.json
+  inc/_header.html, _footer.html, _language_switcher.html
+  blank.html, index.html, 404.html
+  gallery.html, news.html, news-detail.html
+  kontakt.html, impressum.html, datenschutz.html
+  assets/...
+```
 
-1. Use as a site workspace (`theme/`, `pages/`) and run `easyweb publish .`, or let the container entrypoint seed on first deploy.
-2. Hosted stacks use `Themes__DefaultRootPath=/app/Themes/site` (see [Hub install guide](https://github.com/EasySystems-GmbH/EasyWeb-2.0-Hub/blob/main/docs/install-with-docker.md)).
-3. After CMS edits on a live server, run `easyweb pull .` to sync changes back to git.
+## Use with EasyWeb
 
-## Notes
+- **Docker / Hosting:** image bakes this theme as seed → entrypoint copies to `Themes/site` when missing
+- **Theme tab:** Load starter theme restores chrome files into the active site theme
+- **CLI:** `easyweb create-theme MyTheme` scaffolds from this starter
+- **Site workspace:** after pull/publish, work in `theme/` + `pages/`
 
-- Mark editable blocks with `wf-editable`.
-- Keep `{{ current_theme.path }}` in asset paths for compatibility.
+Docs: [EasyWeb 2.0 Hub](https://easysystems-gmbh.github.io/EasyWeb-2.0-Hub/)
+
+<!-- easyweb:template-docs:start -->
+## Template Docs
+
+Template name: `BasicDemoTheme`
+
+### EasyWeb CLI
+
+- Install and usage guide: https://easysystems-gmbh.github.io/EasyWeb-2.0-Hub/docs/cli/
+- Quick start:
+  - `easyweb --help`
+  - `easyweb create-theme MyTheme ./Themes`
+  - `easyweb update docs .`
+
+### Required placeholders
+
+- {{ current_theme.path }}
+- {{ current_page.seo.title }}
+- {{ current_page.seo.description }}
+- {% for link in navigations.main.links %} ... {% endfor %}
+
+### Live Docs
+
+- https://easysystems-gmbh.github.io/EasyWeb-2.0-Hub/
+<!-- easyweb:template-docs:end -->

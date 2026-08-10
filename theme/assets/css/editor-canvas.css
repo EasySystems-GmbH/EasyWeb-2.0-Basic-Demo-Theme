@@ -1,0 +1,10 @@
+/* Page-editor canvas only — not loaded on the live site.
+   Overrides JS-dependent initial states so content is visible while editing.
+   Edit via Admin → Theme → Theme-Dateien → assets/css/editor-canvas.css */
+
+/* custom.js adds .visible on scroll; show final state in the editor */
+.fadeIn,
+.fadeIn.visible {
+  opacity: 1 !important;
+  transition: none !important;
+}

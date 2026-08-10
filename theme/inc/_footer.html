@@ -1,9 +1,20 @@
   </main>
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; EasyWeb 2.0</p>
-    </div>
-  </footer>
-  <script src="{{ current_theme.path }}/assets/js/main.js"></script>
+<!-- ew-site-footer -->
+<footer id="ewSiteFooter" class="border-top py-4 mt-auto">
+  <div class="container text-body-secondary small">&copy; {{ current_year }} EasyWeb</div>
+</footer>
+<!-- /ew-site-footer -->
+
+<!-- ew-theme-js -->
+<script src="{{ current_theme.path }}/assets/js/main.js"></script>
+<script src="{{ current_theme.path }}/assets/js/custom.js" data-ew-consent-ignore></script>
+<!-- /ew-theme-js -->
+
+<!-- ew-asset:bootstrap-js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- /ew-asset:bootstrap-js -->
+<!-- ew-asset:jquery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- /ew-asset:jquery -->
 </body>
 </html>

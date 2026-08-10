@@ -1,0 +1,7 @@
+{% if current_page.alternate_languages.size > 0 %}
+<div class="ew-language-switcher d-flex align-items-center gap-1 ms-lg-3">
+  {% for language in current_page.alternate_languages %}
+  <a class="btn btn-sm btn-outline-secondary{% if language.culture == current_page.culture %} active{% endif %}" href="{{ language.href }}">{{ language.label }}</a>
+  {% endfor %}
+</div>
+{% endif %}

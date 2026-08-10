@@ -2,3 +2,10 @@
   outline: 1px dashed rgba(37, 99, 235, 0.35);
   outline-offset: 4px;
 }
+
+/* Section/flex/button layout: see /css/ew-page-layout.css (injected on live pages) */
+
+.row,
+[class*="col-"] {
+  min-height: 0;
+}

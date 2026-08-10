@@ -1,0 +1,17 @@
+<section class="wf-editable">
+  <h1>Gallery</h1>
+  <p>Slider images are managed in the CMS under <strong>Page sliders</strong> (slider name: <code>main</code>).</p>
+</section>
+
+<section class="ew-slider wf-editable">
+  <div class="ew-slider-track">
+    {% for image in current_page.sliders.main.images %}
+    <figure class="ew-slider-slide">
+      <img src="{{ image.url }}" alt="{{ image.title }}" class="img-fluid">
+      {% if image.title %}
+      <figcaption>{{ image.title }}</figcaption>
+      {% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+</section>

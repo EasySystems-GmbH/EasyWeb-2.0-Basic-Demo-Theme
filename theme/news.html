@@ -1,0 +1,37 @@
+<section class="wf-editable py-5" data-ew-container="container">
+  <div class="container ew-section-container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h1 class="display-6">Neuigkeiten</h1>
+        <p class="text-muted">Aktuelle Meldungen und Veranstaltungen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="wf-editable pb-5" data-ew-container="container">
+  <div class="container ew-section-container">
+    <!-- ew:zone type=liquid id=news-page-neuigkeiten -->
+    <div class="row g-4 align-items-stretch">
+{% for post in news.neuigkeiten.posts %}
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="card h-100 w-100 border">
+          <div class="ew-news-card-image bg-light border-bottom">
+            {% if post.image != blank %}
+            <img src="{{ post.image | file_url }}" class="ew-news-card-img" alt="{{ post.title }}" />
+            {% endif %}
+          </div>
+          <div class="card-body d-flex flex-column">
+            <time class="text-muted small mb-2">{{ post.createdAt | format_date }}</time>
+            <h5 class="card-title">{{ post.title }}</h5>
+            <div class="card-text flex-grow-1">{{ post.textHtml }}</div>
+            {% if post.button.href != blank %}
+            <a href="{{ post.button.href }}" class="{{ post.button.cssClass }} mt-auto align-self-start">{{ post.button.text }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+{% endfor %}
+    </div>
+    <!-- /ew:zone -->
+  </div>
+</section>

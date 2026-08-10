@@ -1,6 +1,6 @@
 {
-  "name": "EasyWeb 2.0 Basic Demo Theme",
-  "short_name": "BasicDemo",
+  "name": "EasyWeb",
+  "short_name": "EasyWeb",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#111827"
