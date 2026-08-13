@@ -25,6 +25,8 @@ theme/
   assets/...
 ```
 
+Default content culture: **German (de) only**. The language switcher partial stays in the starter but only renders when alternate languages exist.
+
 ## Use with EasyWeb
 
 - **Docker / Hosting:** image bakes this theme as seed → entrypoint copies to `Themes/site` when missing
